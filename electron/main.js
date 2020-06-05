@@ -1,4 +1,5 @@
-const { app } = require("electron");
+const electron = require("electron");
+const { app, ipcMain } = require("electron");
 const Window = require("./Window");
 const path = require("path");
 
@@ -7,19 +8,41 @@ if (require("electron-squirrel-startup")) { // eslint-disable-line global-requir
   app.quit();
 }
 
-const createWindow = () => {
+
+const main = () => {
+  const display = {
+    width: electron.screen.getPrimaryDisplay().workArea.width,
+    height: electron.screen.getPrimaryDisplay().workArea.height,
+  }
+
   // Create the browser window.
   const window = new Window({
     file: path.join(__dirname.replace("electron", ""), "src/index.html"),
-    width: 800,
-    height: 600
+    icon: path.join(__dirname.replace("electron", ""), "src/assets/icons/label/notepad.ico"),
+    x: 100,
+    width: display.width,
+    height: display.height,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
+
+  ipcMain.on("close-window", () => {
+    app.quit();
+  });
+  ipcMain.on("minimize-window", () => {
+    window.minimize();
+  });
+  ipcMain.on("maximize-window", () => {
+    window.maximize();
   });
 };
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on("ready", createWindow);
+app.on("ready", main);
 
 // Quit when all windows are closed.
 app.on("window-all-closed", () => {

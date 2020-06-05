@@ -11,6 +11,7 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
+  "repository": "https://github.com/duboloms/notepad/",
   "keywords": [],
   "author": {
     "name": "dubolom",
