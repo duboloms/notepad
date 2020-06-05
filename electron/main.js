@@ -17,7 +17,7 @@ const main = () => {
 
   // Create the browser window.
   const window = new Window({
-    file: path.join(__dirname.replace("electron", ""), "src/index.html"),
+    file: path.join(__dirname.replace("electron", ""), "src/app.html"),
     icon: path.join(__dirname.replace("electron", ""), "src/assets/icons/label/notepad.ico"),
     x: 100,
     width: display.width,
