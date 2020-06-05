@@ -1,8 +1,8 @@
 const { BrowserWindow } = require("electron");
 
 class Window extends BrowserWindow {
-  constructor({ file, width, height }){
-    super({ file, width, height });
+  constructor({ file, ...windowSettings }){
+    super({ ...windowSettings });
 
     this.loadFile(file);
 

@@ -5,14 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
-  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__container__logo">
+        <img src="assets/icons/themes/dark/notepad.svg" alt="">
+      </div>
+      <div class="header__container__controls">
+        <div class="header__container__controls__control control__minimize" id="controlMin">
+          <svg width="11" height="1" viewBox="0 0 11 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="0.5" x2="11" y2="0.5" stroke="#4A4A4A"/>
+          </svg>
+        </div>
+        <div class="header__container__controls__control control__maximize" id="controlMax">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.5V2.5H2.5V0.5H12.5V10.5H10.5V12.5H0.5ZM1.5 3.5V11.5H9.5V3.5H1.5ZM10.5 9.5V2.5H3.5V1.5H11.5V9.5H10.5Z" fill="#4A4A4A"/>
+          </svg>
+        </div>
+        <div class="header__container__controls__control control__close" id="controlClose">
+          <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="11.6833" y1="11.0135" x2="1.02333" y2="0.353575" stroke="#4A4A4A"/>
+          <line x1="12.0135" y1="0.353553" x2="1.35354" y2="11.0135" stroke="#4A4A4A"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
   <h1>Приложение запустилось</h1>
 
-  <!-- <script src="app.js"></script> -->
-  <srcipt>
-
-  </srcipt>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
