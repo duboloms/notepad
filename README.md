@@ -16,7 +16,7 @@ Of course, it was Very difficult to overtake Sublime Text 3 or at least Atom (My
 
 But, i did it:
 
-1. Notepad - 0.524s - 1st (on Electron - HTML, CSS(LESS), JavaScript)
+1. Notepad - 0.524s - 1st (on Electron - HTML, CSS(SCSS), JavaScript)
 
 2. [Sublime Text 3](https://www.sublimetext.com/3): 0.912s - 2nd (on Python)    
 
