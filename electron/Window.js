@@ -1,10 +1,14 @@
 const { BrowserWindow } = require("electron");
 
 class Window extends BrowserWindow {
-  constructor({ file, ...windowSettings }){
+  constructor({ file, type, ...windowSettings }){
     super({ ...windowSettings });
 
-    this.loadFile(file);
+    if(type === "default") {
+      this.loadFile(file);
+    } else if(type === "server") {
+      this.loadURL("http://localhost:5000/src/app.html");
+    }
 
     this.once("ready-to-show", () => {
       this.show();

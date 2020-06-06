@@ -19,13 +19,13 @@ const main = () => {
   const window = new Window({
     file: path.join(__dirname.replace("electron", ""), "src/app.html"),
     icon: path.join(__dirname.replace("electron", ""), "src/assets/icons/label/notepad.ico"),
-    x: 100,
     width: display.width,
     height: display.height,
     frame: false,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    type: "server"
   });
 
   ipcMain.on("close-window", () => {
@@ -57,7 +57,7 @@ app.on("activate", () => {
   // On OS X it"s common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
+    main();
   }
 });
 
