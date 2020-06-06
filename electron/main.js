@@ -19,8 +19,9 @@ const main = () => {
   const window = new Window({
     file: path.join(__dirname.replace("electron", ""), "src/app.html"),
     icon: path.join(__dirname.replace("electron", ""), "src/assets/icons/label/notepad.ico"),
-    width: display.width,
-    height: display.height,
+    width: 800,
+    height: 600,
+    show: false,
     frame: false,
     webPreferences: {
       nodeIntegration: true
@@ -28,14 +29,21 @@ const main = () => {
     type: "server"
   });
 
-  ipcMain.on("close-window", () => {
-    app.quit();
+  window.once("ready-to-show", () => {
+    window.show();
   });
-  ipcMain.on("minimize-window", () => {
+
+  ipcMain.on("window-minimize", () => {
     window.minimize();
   });
-  ipcMain.on("maximize-window", () => {
+  ipcMain.on("window-maximize", () => {
     window.maximize();
+  });
+  ipcMain.on("window-restore", () => {
+    window.restore();
+  })
+  ipcMain.on("window-close", () => {
+    app.quit();
   });
 };
 

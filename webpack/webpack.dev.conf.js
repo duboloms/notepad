@@ -9,13 +9,14 @@ const PATHS = {
 }
 
 module.exports = {
+  mode: "development",
   entry: {
     app: PATHS.app
   },
   output: {
     filename: "[name].js",
     path: PATHS.dist,
-    publicPath: "/dist"
+    publicPath: "/"
   },
   devtool: 'cheap-module-source-map', // Content Security Policy
   target: "node",
@@ -44,8 +45,6 @@ module.exports = {
   },
   devServer: {
     port: 5000,
-    hot: true,
-    inline: true,
     overlay: true
   },
   plugins: [

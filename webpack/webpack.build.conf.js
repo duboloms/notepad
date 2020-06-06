@@ -16,7 +16,6 @@ module.exports = {
     filename: "[name].js",
     path: PATHS.dist
   },
-  mode: "development",
   target: "node",
   externals: [nodeExternals()],
   module: {
